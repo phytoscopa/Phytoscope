@@ -1,0 +1,603 @@
+<?php
+
+namespace Phytoscope\AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Phytoscope\AppBundle\Entity\Questionnaire;
+use Phytoscope\AppBundle\Entity\Personne;
+use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
+
+/**
+ * Clients
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Phytoscope\AppBundle\Entity\ClientsRepository")
+ * @ORM\HasLifecycleCallbacks()
+ */
+class Clients
+{
+
+    public function __construct()
+    {
+        $this->personnes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255)
+     * @Assert\Choice(callback = "getListeClients")
+     */
+    private $type;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="agence", type="string", length=255, nullable = true)
+     */
+    private $agence;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="departement", type="integer")
+     */
+    private $departement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=255, nullable = true)
+     */
+    private $ville;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cp", type="integer", nullable = true)
+     */
+    private $cp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=255, nullable = true)
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=255, nullable = true)
+     */
+    private $telephone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mail", type="string", length=255, nullable = true)
+     */
+    private $mail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="directeur", type="string", length=255, nullable = true)
+     */
+    private $directeur;
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="dateCreation", type="datetime", nullable = true)
+     */
+    private $dateCreation;
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="dateMaj", type="datetime", nullable = true)
+     */
+    private $dateMaj;
+
+    /**
+    * 
+    * @ORM\OneToOne(targetEntity="Phytoscope\AppBundle\Entity\Questionnaire", inversedBy="client", cascade={"persist", "remove"})
+    */
+    private $questionnaire;
+
+    /**
+    * 
+    * @ORM\OneToMany(targetEntity="Phytoscope\AppBundle\Entity\Personne", mappedBy="client", cascade={"persist"})
+    */
+    private $personnes;
+
+    /**
+    * @var text
+    * 
+    */
+    // commentaire n'est pas persisté en BDD, il n'est utilisé que pour afficher la champ demandé par Sonata Fromatter. Attention, cette technique ne peut fonctionner que pour une utilisation de Sonata formatter en balises html (sinon le commentaire brut en Markdown par exemple serait différent du commentaire formatté)
+    private $commentaire;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(name="commentaire_raw", type="text", nullable = true)
+     */
+    private $commentaireRaw;
+
+    /**
+     * @Gedmo\Slug(fields={"nom", "agence"})
+     * @ORM\Column(length=128)
+     */
+    private $slug;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return Clients
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     * @return Clients
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string 
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * Set cp
+     *
+     * @param integer $cp
+     * @return Clients
+     */
+    public function setCp($cp)
+    {
+        $this->cp = $cp;
+
+        return $this;
+    }
+
+    /**
+     * Get cp
+     *
+     * @return integer 
+     */
+    public function getCp()
+    {
+        return $this->cp;
+    }
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     * @return Clients
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string 
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     * @return Clients
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string 
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set mail
+     *
+     * @param string $mail
+     * @return Clients
+     */
+    public function setMail($mail)
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
+
+    /**
+     * Get mail
+     *
+     * @return string 
+     */
+    public function getMail()
+    {
+        return $this->mail;
+    }
+
+    /**
+     * Set directeur
+     *
+     * @param string $directeur
+     * @return Clients
+     */
+    public function setDirecteur($directeur)
+    {
+        $this->directeur = $directeur;
+
+        return $this;
+    }
+
+    /**
+     * Get directeur
+     *
+     * @return string 
+     */
+    public function getDirecteur()
+    {
+        return $this->directeur;
+    }
+
+    /**
+     * Set departement
+     *
+     * @param integer $departement
+     * @return Clients
+     */
+    public function setDepartement($departement)
+    {
+        $this->departement = $departement;
+
+        return $this;
+    }
+
+    /**
+     * Get departement
+     *
+     * @return integer 
+     */
+    public function getDepartement()
+    {
+        return $this->departement;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return Clients
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    public static function getListeClients()
+    {
+        return array('BE' => 'BE', 'Consultant' => 'Consultant', 'CBN' => 'CBN', 'CPIE' => 'CPIE', 'Collectivite' => 'Collectivite', 'Commune' => 'Commune', 'CREN' => 'CREN', 'DREAL' => 'DREAL', 'Autre' => 'Autre');
+    }
+
+    /**
+    * @ORM\PreUpdate
+    */
+    public function updateDateMaj()
+    {
+        $this->setDateMaj(new \Datetime());
+    }
+
+    /**
+    * @ORM\PrePersist
+    */
+    public function updateDateCreation()
+    {
+        $this->setDateCreation(new \Datetime());
+    }
+
+
+    /**
+     * Set dateCreation
+     *
+     * @param \DateTime $dateCreation
+     * @return Clients
+     */
+    public function setDateCreation($dateCreation)
+    {
+        $this->dateCreation = $dateCreation;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCreation
+     *
+     * @return \DateTime 
+     */
+    public function getDateCreation()
+    {
+        return $this->dateCreation;
+    }
+
+    /**
+     * Set dateMaj
+     *
+     * @param \DateTime $dateMaj
+     * @return Clients
+     */
+    public function setDateMaj($dateMaj)
+    {
+        $this->dateMaj = $dateMaj;
+
+        return $this;
+    }
+
+    /**
+     * Get dateMaj
+     *
+     * @return \DateTime 
+     */
+    public function getDateMaj()
+    {
+        return $this->dateMaj;
+    }
+
+    /**
+     * Set agence
+     *
+     * @param string $agence
+     * @return Clients
+     */
+    public function setAgence($agence)
+    {
+        $this->agence = $agence;
+
+        return $this;
+    }
+
+    /**
+     * Get agence
+     *
+     * @return string 
+     */
+    public function getAgence()
+    {
+        return $this->agence;
+    }
+
+    /**
+     * Set questionnaire
+     *
+     * @param \Phytoscope\AppBundle\Entity\Questionnaire $questionnaire
+     * @return Clients
+     */
+    public function setQuestionnaire(\Phytoscope\AppBundle\Entity\Questionnaire $questionnaire = null)
+    {
+        $this->questionnaire = $questionnaire;
+        $questionnaire->setClient($this);
+
+        return $this;
+    }
+
+    /**
+     * Get questionnaire
+     *
+     * @return \Phytoscope\AppBundle\Entity\Questionnaire 
+     */
+    public function getQuestionnaire()
+    {
+        return $this->questionnaire;
+    }
+
+
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Clients
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+    * Add personnes
+    *
+    * @param Phytocope\AppBundle\Entity\Personne $personnes
+    */
+    public function addPersonne(\Phytoscope\AppBundle\Entity\Personne $personne)
+    {
+        $this->personnes[] = $personne;
+    }
+ 
+    /**
+    * Remove personnes
+    *
+    * @param Phytoscope\AppBundle\Entity\Categorie $categories
+    */
+    public function removePersonne(\Phytoscope\AppBundle\Entity\Personne $personne)
+    {
+        $this->personnes->removeElement($personne);
+    }
+ 
+    /**
+      * Get personnes
+      *
+      * @return Doctrine\Common\Collections\Collection
+      */
+    public function getPersonnes()
+    {
+        return $this->personnes;
+    }
+
+    /**
+    *
+    * @return boolean 
+    */
+    public function filledQuestionnaire()
+    {
+        if($this->questionnaire){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Set commentaire
+     *
+     * @param string $commentaire
+     * @return Clients
+     */
+    public function setCommentaire($commentaire)
+    {
+        $this->commentaire = $commentaire;
+
+        return $this;
+    }
+
+    /**
+     * Get commentaire
+     *
+     * @return string 
+     */
+    public function getCommentaire()
+    {
+        return $this->commentaire;
+    }
+
+    /**
+     * Set commentaireRaw
+     *
+     * @param string $commentaireRaw
+     * @return Clients
+     */
+    public function setCommentaireRaw($commentaireRaw)
+    {
+        $this->commentaireRaw = $commentaireRaw;
+
+        return $this;
+    }
+
+    /**
+     * Get commentaireRaw
+     *
+     * @return string 
+     */
+    public function getCommentaireRaw()
+    {
+        return $this->commentaireRaw;
+    }
+}

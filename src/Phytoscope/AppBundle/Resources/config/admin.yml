@@ -1,0 +1,35 @@
+# Phytoscope/AppBundle/Resources/config/admin.yml
+services:
+    sonata.admin.clients:
+        class: Phytoscope\AppBundle\Admin\ClientsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Données", label: "Clients" }
+        arguments:
+            - ~
+            - Phytoscope\AppBundle\Entity\Clients
+            - ~
+        calls:
+            - [ addChild, [ @sonata.admin.questionnaire ] ]
+            #- [ setSecurityContext, [ @security.context ] ]
+    sonata.admin.questionnaire:
+        class: Phytoscope\AppBundle\Admin\QuestionnaireAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Données", label: "Questionnaires" }
+        arguments:
+            - ~
+            - Phytoscope\AppBundle\Entity\Questionnaire
+            - ~
+        calls:
+            - [ setTemplate, [ inner_list_row, PhytoscopeAppBundle:Admin:inner_row_questionnaire.html.twig ] ]
+            - [ setTemplate, [ base_list_field, SonataAdminBundle:CRUD:base_list_flat_field.html.twig ] ]
+            #- [ setTemplates, [ { inner_list_row, SonataAdminBundle:CRUD:base_list_flat_inner_row.html.twig, base_list_field, SonataAdminBundle:CRUD:base_list_flat_field.html.twig } ] ]
+
+    phytoscope_app.admin.personne:
+        class: Phytoscope\AppBundle\Admin\PersonneAdmin
+        arguments: [~, Phytoscope\AppBundle\Entity\Personne, PhytoscopeAppBundle:PersonneAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: "Données", label: "Personnes" }
+        calls:
+            - [ setTemplate, [ inner_list_row, PhytoscopeAppBundle:Admin:inner_row_personne.html.twig ] ]
+            - [ setTemplate, [ base_list_field, SonataAdminBundle:CRUD:base_list_flat_field.html.twig ] ]
+            #- [ setTemplates, [ { inner_list_row, SPhytoscopeAppBundle:Admin:inner_row_personne.html.twig, base_list_field, SonataAdminBundle:CRUD:base_list_flat_field.html.twig } ] ]

@@ -1,0 +1,15 @@
+phytoscope_app_homepage:
+    path:     /
+    defaults: { _controller: PhytoscopeAppBundle:Default:homepage }
+
+phytoscope_app_presentation:
+    path:     /presentation/{slug_client}
+    defaults: { _controller: PhytoscopeAppBundle:Default:presentation }
+
+phytoscope_app_questionnaire:
+    path:     /mieux-vous-connaitre/{slug_client}
+    defaults: { _controller: PhytoscopeAppBundle:Default:questionnaire }
+
+phytoscope_app_be:
+    path:     /be
+    defaults: { _controller: PhytoscopeAppBundle:Default:be }

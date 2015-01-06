@@ -1,0 +1,27 @@
+# Phytoscope/AppBundle/Resources/config/admin.yml
+services:
+    sonata.admin.clients:
+        class: Phytoscope\AppBundle\Admin\ClientsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Clients" }
+        arguments:
+            - ~
+            - Phytoscope\AppBundle\Entity\Clients
+            - ~
+        calls:
+            - [ addChild, [ @sonata.admin.questionnaire ] ]
+            #- [ setSecurityContext, [ @security.context ] ]
+    sonata.admin.questionnaire:
+        class: Phytoscope\AppBundle\Admin\QuestionnaireAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Questionnaires" }
+        arguments:
+            - ~
+            - Phytoscope\AppBundle\Entity\Questionnaire
+            - ~
+
+    phytoscope_app.admin.personne:
+        class: Phytoscope\AppBundle\Admin\PersonneAdmin
+        arguments: [~, Phytoscope\AppBundle\Entity\Personne, PhytoscopeAppBundle:PersonneAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Personne}

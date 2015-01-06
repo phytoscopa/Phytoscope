@@ -1,0 +1,518 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Phtoscope",
+				"PhytoscopeAppBundle"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"size",
+				"font-size"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"back",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/steph/Documents/Developpement/Symfony/Commandes Symfony.mdown",
+			"settings":
+			{
+				"buffer_size": 1044,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Resources/views/mail.html.twig",
+			"settings":
+			{
+				"buffer_size": 259,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/css/form.css",
+			"settings":
+			{
+				"buffer_size": 3937,
+				"line_ending": "Unix",
+				"name": ".form-container {"
+			}
+		},
+		{
+			"file": "src/Phytoscope/AppBundle/Controller/DefaultController.php",
+			"settings":
+			{
+				"buffer_size": 2537,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Phytoscope/AppBundle/Form/Type/QuestionnaireType.php",
+			"settings":
+			{
+				"buffer_size": 1229,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Phytoscope/AppBundle/Resources/config/routing.yml",
+			"settings":
+			{
+				"buffer_size": 506,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Phytoscope/AppBundle/Resources/views/Mail/confirmationQuestionniare.html.twig",
+			"settings":
+			{
+				"buffer_size": 265,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Phytoscope/AppBundle/Resources/views/Questionnaire/questionnaire.html.twig",
+			"settings":
+			{
+				"buffer_size": 1367,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Phytoscope/AppBundle/Resources/views/Presentation/presentation.html.twig",
+			"settings":
+			{
+				"buffer_size": 3998,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Resources/config/admin.yml",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Admin/ClientsAdmin.php",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Entity/Clients.php",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Entity/Questionnaire.php",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Admin/QuestionnaireAdmin.php",
+		"/Applications/MAMP/htdocs/Phytoscope/app/config/parameters.yml",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Resources/views/Presentation/presentation.html.twig",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Resources/views/Questionnaire/questionnaire.html.twig",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Resources/views/Default/index.html.twig",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Menu/MenuBuilder.php",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Entity/Questionnaire.php~",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Entity/QuestionnaireRepository.php",
+		"/Applications/MAMP/htdocs/Phytoscope/app/Resources/views/layout.html.twig",
+		"/Applications/MAMP/htdocs/Phytoscope/web/css/OnScrollEffect/component.css",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Resources/views/Mail/confirmationQuestionniare.html.twig",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Resources/config/parameters.yml",
+		"/Applications/MAMP/htdocs/Phytoscope/app/config/config.yml",
+		"/Applications/MAMP/htdocs/Phytoscope/app/config/config_dev.yml",
+		"/Applications/MAMP/htdocs/Phytoscope/app/AppKernel.php",
+		"/Applications/MAMP/htdocs/Phytoscope/app/config/security.yml",
+		"/Applications/MAMP/htdocs/Phytoscope/web/css/ArticleIntroEffects/component.css",
+		"/Applications/MAMP/htdocs/Phytoscope/composer.json",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Resources/config/routing.yml",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Resources/views/Presentation/Presentation.html.twig",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/UserBundle/Entity/User.php",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/UserBundle/PhytoscopeUserBundle.php",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Controller/DefaultController.php",
+		"/Users/steph/Downloads/ArticleIntroEffects/index4.html",
+		"/Applications/MAMP/htdocs/Phytoscope/app/config/routing.yml",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/UserBundle/Resources/config/doctrine/User.orm.yml",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/UserBundle/Entity/userRepository.php",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/credits.txt",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Resources/config/services.yml",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Presentation/PresentationController.php",
+		"/Applications/MAMP/htdocs/Phytoscope/app/Resources/views/forms.html.twig",
+		"/Applications/MAMP/htdocs/Phytoscope/src/Phytoscope/AppBundle/Resources/views/Menu/knp_menu.html.twig",
+		"/Applications/MAMP/htdocs/Phytoscope/app/Resources/views/base.html.twig",
+		"/Applications/node.js/testApp/serveur.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"BE",
+			"parameter",
+			"h1",
+			"client",
+			"Assert"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/steph/Documents/Developpement/Symfony/Commandes Symfony.mdown",
+					"settings":
+					{
+						"buffer_size": 1044,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								502,
+								502
+							]
+						],
+						"settings":
+						{
+							"rulers":
+							[
+							],
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Resources/views/mail.html.twig",
+					"settings":
+					{
+						"buffer_size": 259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								224,
+								224
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "web/css/form.css",
+					"settings":
+					{
+						"buffer_size": 3937,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3937,
+								3937
+							]
+						],
+						"settings":
+						{
+							"auto_name": ".form-container {",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/Phytoscope/AppBundle/Controller/DefaultController.php",
+					"settings":
+					{
+						"buffer_size": 2537,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1826,
+								1826
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 415.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Phytoscope/AppBundle/Form/Type/QuestionnaireType.php",
+					"settings":
+					{
+						"buffer_size": 1229,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								856,
+								856
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Phytoscope/AppBundle/Resources/config/routing.yml",
+					"settings":
+					{
+						"buffer_size": 506,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								423,
+								425
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/Phytoscope/AppBundle/Resources/views/Mail/confirmationQuestionniare.html.twig",
+					"settings":
+					{
+						"buffer_size": 265,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								200,
+								200
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/HTML (Twig).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/Phytoscope/AppBundle/Resources/views/Questionnaire/questionnaire.html.twig",
+					"settings":
+					{
+						"buffer_size": 1367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								313,
+								313
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/Phytoscope/AppBundle/Resources/views/Presentation/presentation.html.twig",
+					"settings":
+					{
+						"buffer_size": 3998,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2742,
+								2742
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 809.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 317.0,
+	"status_bar_visible": true
+}

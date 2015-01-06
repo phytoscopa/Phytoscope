@@ -1,0 +1,99 @@
+{# src/eveg/AppBundle/Resources/views/Presentation/presentation.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{# <link rel="stylesheet" href="{{ asset('css/OnScrollEffect/component.css') }}" type="text/css" /> #}
+	{% stylesheets 'css/OnScrollEffect/component.css' filter='cssrewrite' %}
+    	<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+{% endblock %}
+
+
+{% block title %}
+	Qui sommes-nous ? - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+	{{ parent() }}
+
+	{% if client.questionnaire is null %}
+		<p class="text-center">
+			<a href="{{ path('phytoscope_app_questionnaire',{'slug_client':client.slug}) }}">
+				<button type="button" class="btn btn-primary btn-lg">Accéder au questionnaire</button>
+			</a>
+		</p>
+	{% endif %}
+
+	<div id="cbp-so-scroller" class="cbp-so-scroller">
+ 	
+	    <section class="cbp-so-section">
+	        <article class="cbp-so-side cbp-so-side-left">
+	            <h2>Qui sommes-nous ?</h2>
+	            <p class = "sous-titre">Botanistes, passionnés de phytosociologie, formés pendant plusieurs années en conservatoire botanique national.</p>
+	            <p><b>Caroline</b> est aguérie aux typologies et cartographies phytosociologiques.</p>
+	            <p>Son milieu favori ? Le littoral !</p>
+	            <p><b>Stéphane</b>, féru de phytosociologie, est aguéri à la gestion de données et à leur mise en valeur.</p>
+	            <p>Son passe-temps préféré ? Développer eVeg !</p>
+	        </article>
+	        <figure class="cbp-so-side cbp-so-side-right">
+	            {% image 'img/presentation/caro_steph.png' %}
+	    			<img src="{{ asset_url }}" class="center" alt="Présentation Phytoscope" height="400px" />
+				{% endimage %}
+	        </figure>
+	    </section>
+	 
+	    <section class="cbp-so-section">
+	        <figure class="cbp-so-side cbp-so-side-left">
+	            {% image 'img/presentation/2.png' %}
+	    			<img src="{{ asset_url }}" alt="Présentation Phytoscope" />
+				{% endimage %}  
+	        </figure>
+	        <article class="cbp-so-side cbp-so-side-right">
+	            <h2>Notre projet</h2>
+	            <p>Le <mark>Phytoscope</mark> est un outil pensé pour vous offrir les ressources <i>had hoc.</i> dans le domaine de la botanique, de la phytosociologie et plus largement de la connaissance des habitats naturels.</p>
+	            <p>Nous aimerions vous accompagner dans vos projets (cartographies, études d'impact, suivis...). Vous proposez la compétence juste à l'instant souhaité.</p>
+	        </article>
+	    </section>
+	 
+	    <section class="cbp-so-section cbp-so-section-last">
+	        <article class="cbp-so-side cbp-so-side-left">
+	            <h2>A propos de vous ?</h2>
+				{% if client.questionnaire is null %}
+					<p>Nous aimerions en savoir un peu plus sur vous afin d'affiner notre offre et de répondre au mieux à <b>vos attentes</b>.</p>
+		            <p>Merci de nous accorder quelques minutes pour répondre au questionnaire.</p>
+					<a href="{{ path('phytoscope_app_questionnaire',{'slug_client':client.slug}) }}">
+						<button type="button" class="btn btn-primary btn-lg">Accéder au questionnaire</button>
+					</a>
+				{% else %}
+					<p>Merci d'avoir pris le temps de répondre à notre questionnaire, ...<p/>
+				{% endif %}
+	        </article>
+	        <article class="cbp-so-side cbp-so-side-right">
+	        	<br />
+	            <div class="client">{{ client.nom }}</div>
+	            {% if client.agence != null %}
+	            	<div class="client-sous-titre">{{ client.agence }}</div>
+	            {% endif %}
+	        </article>
+	    </section>
+     
+	</div>
+
+	
+
+{% endblock %}
+
+
+{% block javascript %}
+	{{ parent() }}
+	{# <script type="text/javascript" src="{{ asset('js/OnScrollEffect/*') }}"></script> #}
+	{% javascripts 'js/OnScrollEffect/*' %}
+    	<script type="text/javascript" src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+	<script>
+		new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
+	</script>
+{% endblock %}

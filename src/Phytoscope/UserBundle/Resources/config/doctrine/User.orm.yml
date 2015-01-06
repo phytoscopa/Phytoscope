@@ -1,0 +1,10 @@
+# src/Phytoscope/UserBundle/Resources/config/doctrine/User.orm.yml
+
+Phytoscope\UserBundle\Entity\User:
+    type:  entity
+    table: phytoscope_user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO

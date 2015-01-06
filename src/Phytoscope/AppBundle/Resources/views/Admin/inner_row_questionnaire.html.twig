@@ -1,0 +1,32 @@
+{# src/Phytoscope/AppBundle/Resources/Views/admin/inner_row_questionnaire.html.twig #}
+
+{# Extend the default template, which provides batch and action cells #}
+{#     as well as the valid colspan computation #}
+{% extends 'SonataAdminBundle:CRUD:base_list_flat_inner_row.html.twig' %}
+
+{% block row %}
+    {# you can use fields defined in the the Admin class #}
+    
+
+	Client :                 {{ object.client }} <br />
+	{# Réponse envoyée le :     {{ object.envoyeLe }}< br/> --- faire un toString pour la date#} 
+	Avez-vous un botaniste ? 
+		{% if object.qBotaniste == true %}
+			<span class="badge">oui</span>
+		{% else %}
+			<span class="badge">non</span>
+		{% endif %} <br />
+    {#
+    {{ object|render_list_element(field_description) }}
+    
+    {{ object|render_list_element(admin.list['client']) }} -
+    {{ object|render_list_element(admin.list['qBotaniste']) }} -
+    {{ object|render_list_element(admin.list['qNbBotaniste']) }} <br /> #}
+
+    <small>
+        {# or you can use the object variable to render a property #}
+        {# test #}
+        {# {{ object.message }} #}
+    </small>
+
+{% endblock %}
